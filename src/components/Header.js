@@ -1,10 +1,21 @@
+    import Image from 'next/image';
 
     function Header () {
 
         return (
             <header>
-              
-                <h1>Amazon 2.0</h1>
+            {/* Top Nav: */}
+                <div>
+                    <Image
+                        src="https://links.papareact.com/f90"
+                        width={150}
+                        height={40} />
+                </div>
+
+            {/* Bottom Nav: */}
+                <div>
+
+                </div>
                
             </header>
         );
