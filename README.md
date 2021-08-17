@@ -1,3 +1,7 @@
+# Project Description:
+
+A replica of Amazon using Next.js, Tailwind CSS, Redux, Firebase, and NextAuth
+
 # Installation Steps
 
 
