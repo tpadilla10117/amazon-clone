@@ -3,3 +3,5 @@
     export { default as Header } from "./components/Header.js";
 
     export { default as Banner } from "./components/Banner.js";
+
+    export { default as ProductFeed } from "./components/ProductFeed.js";
