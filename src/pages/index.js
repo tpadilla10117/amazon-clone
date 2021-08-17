@@ -5,7 +5,7 @@ import { Header, Banner } from '.././utils';
 
 export default function Home() {
   return (
-    <div>
+    <div className="bg-gray-100">
       <Head>
         <title>Amazon 2.0</title>
       </Head>
