@@ -4,6 +4,7 @@ A replica of Amazon using Next.js, Tailwind CSS, Redux, Firebase, and NextAuth
 
 # Installation Steps
 `npm install @heroicons/react` -> for hero icons
+`npm i react-responsive-carousel` -> for carousel dependency
 
 
 ## Using npm
