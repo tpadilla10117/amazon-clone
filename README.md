@@ -5,6 +5,7 @@ A replica of Amazon using Next.js, Tailwind CSS, Redux, Firebase, and NextAuth
 # Installation Steps
 `npm install @heroicons/react` -> for hero icons
 `npm i react-responsive-carousel` -> for carousel dependency
+`npm install react-currency-formatter` -> for currency fortmatter dependency
 
 <!-- Data fetched from Fakestore APi, which is a REST API -->
 
