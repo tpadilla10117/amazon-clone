@@ -1,4 +1,9 @@
     import Image from 'next/image';
+    import {
+        MenuIcon,
+        SearchIcon,
+        ShoppingCartIcon,
+    } from "@heroicons/react/outline";
 
     function Header () {
 
@@ -15,6 +20,17 @@
                             className="cursor-pointer"
                         />
                     </div>
+
+                {/* Search Bar:  */}
+                    <div className="hidden sm:flex bg-yellow-400 hover:bg-yellow-500 items-center h-10 rounded-md flex-grow cursor-pointer">
+                        <input type="text" className="p-2 h-full w-6 flex-grow flex-shrink rounded-l-md focus:outline-none px-4" />
+                        <SearchIcon className="h-12 p-4" />
+
+                    </div>
+
+
+
+
                 </div>
 
             {/* Bottom Nav: */}
