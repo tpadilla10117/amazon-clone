@@ -5,7 +5,13 @@
         ShoppingCartIcon,
     } from "@heroicons/react/outline";
 
+    import { signIn, signOut, useSession } from "next-auth/client";
+
     function Header () {
+
+    /* Gives us access to the logged in user's session data: */
+        const [ session ] = useSession();
+
 
         return (
             <header>
@@ -31,8 +37,10 @@
                 {/* Right Side: */}
                     <div className="text-white flex items-center text-xs space-x-6 mx-6 whitespace-nowrap">
 
-                        <div className="link"> {/* using custom utility class "link" */}
-                            <p>Hello Trin Padilla</p>
+                        <div className="link" onClick={!session ? signIn : signOut }> {/* using custom utility class "link" */}
+                            <p className="hover:underline">
+                                {session ? `Hello, ${session.user.name}` : "Sign In" }
+                            </p>
                             <p className="font-extrabold md:text-sm">Account & Lists</p>
                         </div>
 

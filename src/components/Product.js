@@ -30,7 +30,7 @@
             {/* Create an enpmy Array with the existing state, fill it with empty values, then map through those values: */}
                 <div className="flex">
                         {Array(rating).fill().map( (_, index) => (
-                            <StarIcon className="h-5 text-yellow-500" />
+                            <StarIcon key={index} className="h-5 text-yellow-500" />
                         ))}
                     
                 </div>
