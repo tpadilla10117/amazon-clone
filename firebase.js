@@ -8,3 +8,5 @@ const firebaseConfig = {
     messagingSenderId: "1060686916730",
     appId: "1:1060686916730:web:b2a20799ab7f64d7a6dfc3"
   };
+
+/* const provider = new firebase.auth.FacebookAuthProvider(); */
