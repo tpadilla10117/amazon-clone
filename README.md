@@ -10,6 +10,7 @@ A replica of Amazon using Next.js, Tailwind CSS, Redux, Firebase, and NextAuth
 `npm install next-auth` -> for next-auth dependency
 `npm install --save stripe` -> to install the Stripe library
 `npm install @stripe/stripe-js` -> install Stripe.js Module to make server-side requests to to Stripe API and to provide methods for including Stripe.js in client-side code
+`npm install axios` -> promise based HTTP client for browser and node.js
 
 <!-- Data fetched from Fakestore APi, which is a REST API -->
 

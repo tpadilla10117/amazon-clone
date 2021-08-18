@@ -4,4 +4,10 @@
         images: {
             domains: ['links.papareact.com', "fakestoreapi.com"]
         },
+
+        /* This is only for the public key - DONT PUT PRIVATE KEYS HERE or risk EXPOSURE!!! */
+        env: {
+            stripe_public_key: process.env.STRIPE_PUBLIC_KEY
+        }
+
     };
