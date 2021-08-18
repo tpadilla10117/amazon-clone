@@ -7,3 +7,5 @@
     export { default as ProductFeed } from "./components/ProductFeed.js";
 
     export { default as Product } from "./components/Product.js";
+
+    export { default as Checkout } from './pages/checkout';
