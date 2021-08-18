@@ -2,6 +2,8 @@
     import { useState } from "react";
     import { StarIcon } from "@heroicons/react/solid";
     import Currency from 'react-currency-formatter';
+    import { useDispatch } from "react-redux";
+    import { addToBasket } from "../slices/basketSlice";
 
 /* Variables for randomizing review stars: */
     const MAX_RATING = 5;
@@ -9,6 +11,8 @@
 
     function Product ( { id, title, price, description, category, image } ) {
 
+    /* useDispatch lets me dispatch / shoot actions into the Global Store:*/
+        const dispatch = useDispatch();
 
         /* State for randomized Review Stars: */
         const [ rating ] = useState(
@@ -18,6 +22,22 @@
         /* State for randomized Amazon Prime: */
 
         const [ hasPrime ] = useState(Math.random() < 0.5  );
+
+        /* This is for the onClick on the product cards */
+        /* It dispatches an item into Global Store: */
+        const addItemToBasket = () => {
+            const product = {
+                id, 
+                title, 
+                price, 
+                description, 
+                category, 
+                image,
+            };
+
+        //Sending the product as an action to the REDUX store...the basket slice
+            dispatch(addToBasket(product) );
+        };
 
 
         return (
@@ -48,7 +68,7 @@
                     </div>
                 )}
 
-                <button className="mt-auto button">Add to Basket</button>
+                <button className="mt-auto button" onClick={addItemToBasket}>Add to Basket</button>
 
 
 
