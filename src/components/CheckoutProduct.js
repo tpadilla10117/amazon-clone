@@ -6,11 +6,17 @@ import { addToBasket, removeFromBasket } from "../slices/basketSlice";
 
 function CheckoutProduct ( { id, title, price, rating, description, category, image, hasPrime,} ) {
 
-/* Dispatch and function to add items from checkout to basket: */
+/* Dispatch and function to add & remove items from checkout to basket: */
     const dispatch = useDispatch();
 
     const addItemToBasket = () => {
+        const product = { id, title, price, rating, description, category, image, hasPrime };
+        dispatch(addToBasket(product) )
+    };
 
+    const removeItemFromBasket = () => {
+    //Remove the item from Redux
+        dispatch(removeFromBasket( { id } ) );
     };
 
     return (
@@ -49,7 +55,7 @@ function CheckoutProduct ( { id, title, price, rating, description, category, im
         {/* Right add/remove buttons: */}
             <div className="flex flex-col space-y-2 my-auto justify-self-end">
                 <button className="button" onClick={addItemToBasket}>Add to Basket</button>
-                <button className="button">Remove from Basket</button>
+                <button className="button" onClick={removeItemFromBasket}>Remove from Basket</button>
             </div>
             
 

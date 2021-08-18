@@ -18,7 +18,23 @@ export const basketSlice = createSlice({
       //need to ensure the payload gets pushed in (it contains the product that is dispatched)
       state.items = [ ...state.items, action.payload ];
     },
-    removeFromBasket: (state, action) => {},
+    removeFromBasket: (state, action) => {
+      //look for index of the item we want to remove...
+      const index = state.items.findIndex( basketItem => basketItem.id === action.payload.id );
+
+      //make a copy of current basket
+      let newBasket = [...state.items];
+
+      //index will return a numeral value of where item exists in the array-> will be greater than 0 if it exists...
+      if (index >= 0) {
+        //The item exists in the basket- remove it...
+        newBasket.splice(index, 1)
+      } else {
+        console.warn(`Can't remove product (id: ${action.payload.id}) as it is not in the basket`)
+      }
+
+      state.items = newBasket;
+    },
   },
 });
 
