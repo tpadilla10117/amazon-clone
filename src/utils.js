@@ -8,4 +8,6 @@
 
     export { default as Product } from "./components/Product.js";
 
+    export { default as CheckoutProduct } from './components/CheckoutProduct.js';
+
     export { default as Checkout } from './pages/checkout';

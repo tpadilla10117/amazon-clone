@@ -33,6 +33,7 @@
                 description, 
                 category, 
                 image,
+                hasPrime
             };
 
         //Sending the product as an action to the REDUX store...the basket slice
