@@ -16,6 +16,8 @@ A replica of Amazon using Next.js, Tailwind CSS, Redux, Firebase, and NextAuth
 `npm install firebase-admin`
 `npm install moment` -> A JavaScript date library for parsing, validating, manipulating, and formatting dates
 
+<!-- stripe listen --forward-to localhost:3000/api/webhook -->
+
 <!-- Data fetched from Fakestore APi, which is a REST API -->
 
 ## Using npm
@@ -41,6 +43,8 @@ Run commands
 ## Stripe Processes:
 
 After login & authentication, run `stripe listen --forward-to localhost:3000/api/webhook` for local environment -> receive a STRIPE_SIGNING_SECRET and place into environment variable
+
+For payments use: `4242 4242 4242 4242` for card number -> should give a success.
 
 ## NOTES:
 - Next.js: In the API folder, anything here is the backend.  It's running Node.js . Your dependencies need to reflect Node.js -> eg. the firebase-admin dependency is run on server-side (it's secure, the user isnt on the server).  We can interact with our firebase database through this

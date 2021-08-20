@@ -31,11 +31,11 @@
                     <p className='absolute top-2 right-2 w-40 lg:w-72 truncate text-xs whitespace-nowrap'>ORDER # {id}</p>
 
                 </div>
-
+            {/* Needs a key */}
                 <div className='p-5 sm:p-10'>
                     <div className="flex space-x-6 overflow-x-auto">
                         {images.map( image => (
-                            <img src={image} alt="" className="h-20 object-contain sm:h-32"/> 
+                            <img src={image} alt="" className="h-20 object-contain sm:h-32" key={id}/> 
                         ))}
                     </div>
                 </div>

@@ -8,7 +8,7 @@
 /* Give admin permission to go into database (backnend) -> configure in Project settings - Service accounts in Firebase */
 /* Generate a private key and drag into IDE */
 
-    const serviceAccount = require('../../../permissions.json');
+    const serviceAccount = require('../../../.permissions.json');
 
 /* Here I initialize the app with the proper firebase credentials (Private key) and account for if there is no admin:  */
     //if no app already initialized...else use the one that is initialized
@@ -22,7 +22,7 @@
 
     const endpointSecret = process.env.STRIPE_SIGNING_SECRET;
 
-/* Pushes order info into  */
+/* 1) Pushes order info into firestore: */
     const fulfillOrder = async (session) => {
         console.log('Fulfilling order', session);
         return app.firestore().collection('users').doc(session.metadata.email).collection('orders').doc(session.id).set( {
@@ -43,7 +43,7 @@
             const signature = req.headers["stripe-signature"];
 
             let event;
-        //Verify that the EVENT posted came from stripe:
+        // 2) Verify that the EVENT posted came from stripe:
             try {
                 event = stripe.webhooks.constructEvent(payload, signature, endpointSecret);
             } catch (err) {
@@ -51,12 +51,12 @@
                 return res.status(400).send(`Webhook error: ${err.message}`)
             }
 
-        //Handle the checkout.session.completed event and push it into database:
+        // 3) Handle the checkout.session.completed event and push it into database:
         if (event.type === 'checkout.session.completed') {
             const session = event.data.object;
 
 
-            //Fulfill the order...
+            // 4) Fulfill the order...
             return fulfillOrder(session).then( () => res.status(200))
             .catch( (err) => res.status(400).send(`Webhook Error: ${err.message}`));
 
@@ -70,6 +70,6 @@
     export const config = {
         api: {
             bodyParser: false,
-            externalResolver: true
+            externalResolver: true /* Stripe resolves... */
         },
     };
