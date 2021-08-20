@@ -10,8 +10,10 @@
 
     export { default as CheckoutProduct } from './components/CheckoutProduct.js';
 
+    export { default as Order } from './components/Order.js';
+
     export { default as Checkout } from './pages/checkout';
 
     export { default as Success } from './pages/success';
 
-    export { default as Orders } from './pages/orders';
+    

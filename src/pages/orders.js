@@ -1,10 +1,10 @@
 /* This page shows a user's order history: */
-    import { Header } from "../utils";
+    import { Header, Order } from "../utils";
     import { useSession, getSession } from "next-auth/client"; //to check logged in user's session data
     import moment from "moment";
     import db from '../../firebase';
 
-    function Orders( {orders} ) {
+    function Orders( { orders } ) {
 
         const [ session ] = useSession();
         console.log(orders);
@@ -18,18 +18,29 @@
 
             {/* If a session... */}
                 {session ? (
-                    <h2>x Orders</h2>
+                    <h2>{orders.length} Orders</h2>
                 ) : (
                     <h2>Please sign in to see your orders</h2>
                 )}
 
-                <div className="mt-5 space-y-4"></div>
+                <div className="mt-5 space-y-4">
 
-            {/* With the returned data , generate Order items in the UI:*/}
-               {/*  {order?.map( order => {
-                    <Order />
-                })} */}
+                {/* With the returned data , generate Order items in the UI:*/}
+                    {orders?.map( ({ id, amount, amountShipping, items, timestamp, images}) => (
+                        <Order 
+                            key={id}
+                            id={id}
+                            amount={amount}
+                            amountShipping={amountShipping}
+                            items={items}
+                            timestamp={timestamp}
+                            images={images}
+                        
+                        />
+                    )
+                    )}
 
+                </div>
 
                 </main>
 
