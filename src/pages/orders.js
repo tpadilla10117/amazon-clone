@@ -98,6 +98,7 @@
         return {
             props: {
                 orders,
+                session
             }
         };
 

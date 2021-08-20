@@ -1,5 +1,6 @@
 /* Next.js = file based routing, index is '/': */
 
+import { getSession } from "next-auth/client";
 import Head from "next/head";
 import { Header, Banner, ProductFeed } from '.././utils';
 
@@ -29,6 +30,7 @@ export default function Home( {products} ) {
 /* This function tells Next.js to implement Server-side rendering: */
 
   export async function getServerSideProps(context) {
+    const session = await getSession(context);
     const products = await fetch("https://fakestoreapi.com/products").then( 
       (res) => res.json() 
     );
@@ -36,6 +38,7 @@ export default function Home( {products} ) {
     /* Pass fetched data as props to component: */
     return { props: {
       products,
+      session
       },
     };
   };
