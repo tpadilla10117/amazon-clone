@@ -1,6 +1,6 @@
 /* This page shows a user's order history: */
     import { Header } from "../utils";
-    import { useSession } from "next-auth/client"; //to check logged in user's session data
+    import { useSession, getSession } from "next-auth/client"; //to check logged in user's session data
     import moment from "moment";
     import db from '../../firebase';
 
@@ -42,7 +42,7 @@
         const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
         //Get the user;s logged in credentials...
-        const session = getSession(context);
+        const session = await getSession(context);
 
         if(!session) {
             return {
