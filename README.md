@@ -14,6 +14,7 @@ A replica of Amazon using Next.js, Tailwind CSS, Redux, Firebase, and NextAuth
 `brew install stripe/stripe-cli/stripe` -> installed the Stripe CLI with homebrew
 `npm install micro`
 `npm install firebase-admin`
+`npm install moment` -> A JavaScript date library for parsing, validating, manipulating, and formatting dates
 
 <!-- Data fetched from Fakestore APi, which is a REST API -->
 
