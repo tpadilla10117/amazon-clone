@@ -11,3 +11,5 @@
     export { default as CheckoutProduct } from './components/CheckoutProduct.js';
 
     export { default as Checkout } from './pages/checkout';
+
+    export { default as Success } from './pages/success';
