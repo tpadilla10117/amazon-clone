@@ -18,6 +18,9 @@ A replica of Amazon using Next.js, Tailwind CSS, Redux, Firebase, and NextAuth
 
 <!-- stripe listen --forward-to localhost:3000/api/webhook -->
 
+Step 1) run npm run dev
+Step 2) <!-- stripe listen --forward-to localhost:3000/api/webhook -->
+
 <!-- Data fetched from Fakestore APi, which is a REST API -->
 
 ## Using npm
