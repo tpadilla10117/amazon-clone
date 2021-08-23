@@ -1,4 +1,4 @@
-const permission = {
+const permissions = {
   "type": "service_account",
   "project_id": "trin--clone",
   "private_key_id": process.env.PRIVATE_KEY_ID,
