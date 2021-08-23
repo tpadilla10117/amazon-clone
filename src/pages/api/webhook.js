@@ -8,7 +8,7 @@
 /* Give admin permission to go into database (backnend) -> configure in Project settings - Service accounts in Firebase */
 /* Generate a private key and drag into IDE */
 
-    const serviceAccount = /* require('../../../permissions.json') */ process.env.GOOGLE_APPLICATION_CRENDENTIALS;
+    const serviceAccount = /* require('../../../permissions.json') */ require('../../../permissions');
 
 /* Here I initialize the app with the proper firebase credentials (Private key) and account for if there is no admin:  */
     //if no app already initialized...else use the one that is initialized
